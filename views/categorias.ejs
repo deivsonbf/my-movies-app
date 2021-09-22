@@ -1,0 +1,37 @@
+<%- include('./layouts/header') -%>
+<body>
+  <%- include('./layouts/header-content') -%>
+  <!--header-->
+  <%- include('./layouts/sidebar') -%>
+  <!--sidebar-->
+  <div class="main">
+    <div class="container">
+      <div class="main-header">
+        <div class="header-title">
+          <i class="fas fa-th"></i>
+          <span>Categorias</span>
+        </div>
+        <!--main-title-->
+        <div class="content-wrapper">
+          <% categorias.forEach(categoria => { %>
+          <a href="#">
+            <div class="box">
+              <div
+                style="
+                  background-image: url('<%-categoria.imagem%>');
+                  background-size: cover;
+                  border-radius: 12px;
+                "
+                class="box-content"
+              >
+                <span> <%=categoria.nome%> </span>
+              </div>
+            </div>
+          </a>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('./layouts/footer') -%>

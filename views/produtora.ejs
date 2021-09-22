@@ -1,0 +1,37 @@
+<%- include('./layouts/header') -%>
+<body>
+  <%- include('./layouts/header-content') -%>
+  <!--header-->
+  <%- include('./layouts/sidebar') -%>
+  <!--sidebar-->
+  <div class="main">
+    <div class="container">
+      <div class="main-header">
+        <div class="header-title">
+          <i class="fas fa-film"></i>
+          <span>Produtora</span>
+        </div>
+        <div class="header-search">
+        <form action="/video/search" method="POST">
+            <i class="fas fa-search"></i>
+          <input type="text" name="video" />
+        </form>
+      
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="content-wrapper">
+        <% produtoras.forEach(produtora => { %>
+        <a href="/videos">
+          <div class="box-cover">
+            <div class="box-cover-content">
+              <img src="<%=produtora.imagem%>" alt="<%=produtora.nome%>" />
+            </div>
+          </div>
+        </a>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('./layouts/footer') -%>

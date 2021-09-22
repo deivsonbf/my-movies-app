@@ -1,0 +1,37 @@
+<%- include('./layouts/header') -%>
+<body>
+  <%- include('./layouts/header-content') -%>
+  <!--header-->
+  <%- include('./layouts/sidebar') -%>
+  <!--sidebar-->
+  <div class="main">
+    <div class="container">
+      <div class="main-header">
+        <div class="header-title">
+          <i class="fas fa-video"></i>
+          <span>Produtoras</span>
+        </div>
+        <!--main-title-->
+        <div class="content-wrapper">
+          <% produtoras.forEach(produtora => { %>
+          <a href="/produtora/<%=produtora.id_produtora%>">
+            <div class="box">
+              <div
+                style="
+                  background-image: url('<%-produtora.imagem%>');
+                  background-position: center;
+                  background-size: cover;
+                "
+                class="box-content"
+              >
+                <span><%=produtora.nome%></span>
+              </div>
+            </div>
+          </a>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('./layouts/footer') -%>
